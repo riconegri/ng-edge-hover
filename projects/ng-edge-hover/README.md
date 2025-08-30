@@ -1,63 +1,33 @@
-# NgEdgeHover
+# ng-edge-hover
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Edge-aware hover gesture directives for Angular.
 
-## Code scaffolding
+- edgeHoverClick: enter from top, exit right => click
+- edgeHoverTopExitTopClick: enter from top, exit top => click
+- hoverHoldClick: hover in a zone (e.g., left 25%) for a duration => click
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Install
+npm i ng-edge-hover
 
-```bash
-ng generate component component-name
+## Usage (standalone components)
+```ts
+import { Component } from '@angular/core';
+import { EdgeHoverClickDirective, EdgeHoverTopExitTopClickDirective, HoverHoldClickDirective } from 'ng-edge-hover';
+
+@Component({
+  standalone: true,
+  selector: 'app-demo',
+  imports: [],
+  template: `
+    <button edgeHoverClick (click)="log('edge top->right')">Edge Top->Right</button>
+    <button edgeHoverTopExitTopClick (click)="log('edge top->top')">Edge Top->Top</button>
+    <button hoverHoldClick [hoverHoldPercent]="25" [hoverHoldDelayMs]="250" (click)="log('hover hold')"> Hover left 25% for 250ms </button>
+     `}) 
+export class DemoComponent { 
+  log(m: string) { console.log(m); }
+}
 ```
+## Awaiting
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
-
-```bash
-ng build ng-edge-hover
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ng-edge-hover
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Tests
+- Optimization

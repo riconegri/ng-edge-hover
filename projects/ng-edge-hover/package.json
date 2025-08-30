@@ -1,9 +1,9 @@
 {
   "name": "ng-edge-hover",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0"
+    "@angular/common": "^20.2.3",
+    "@angular/core": "^20.2.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
