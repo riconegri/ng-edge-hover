@@ -1,6 +1,6 @@
 {
   "name": "ng-edge-hover",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Angular directives to trigger clicks based on edge-aware hover gestures and hover-hold zones.",
   "keywords": [
     "angular",
