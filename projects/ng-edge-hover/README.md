@@ -5,6 +5,8 @@ Edge-aware hover gesture directives for Angular.
 - edgeHoverClick: enter from top, exit right => click
 - edgeHoverTopExitTopClick: enter from top, exit top => click
 - hoverHoldClick: hover in a zone (e.g., left 25%) for a duration => click
+- detectEnterSide: return the side of the element that was entered from
+- detectExitSide: return the side of the element that was exited to
 
 ## Install
 npm i ng-edge-hover
@@ -22,6 +24,8 @@ import { EdgeHoverClickDirective, EdgeHoverTopExitTopClickDirective, HoverHoldCl
     <button edgeHoverClick (click)="log('edge top->right')">Edge Top->Right</button>
     <button edgeHoverTopExitTopClick (click)="log('edge top->top')">Edge Top->Top</button>
     <button hoverHoldClick [hoverHoldPercent]="25" [hoverHoldDelayMs]="250" (click)="log('hover hold')"> Hover left 25% for 250ms </button>
+    <button detectEnterSide (enterSide)="log($event)">Detect enter side</button>
+    <button detectExitSide (exitSide)="log($event)">Detect exit side</button>   
      `}) 
 export class DemoComponent { 
   log(m: string) { console.log(m); }
